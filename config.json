@@ -1,5 +1,5 @@
 {
-  "webhookUrl": "http://PUTWEBADDRESSHERE",
-  "token": "__PUT_BOT_API_KEY_HERE",
+  "webhookUrl": "https://niro-spark-bot.herokuapp.com/",
+  "token": "NTFkYjAyMDgtNTdkZi00YjQ5LWE5OTItNzY2Mzk5MGUzYmIyNDJlNGRmNDItMDJk",
   "port": 1337
 }
