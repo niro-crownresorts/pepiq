@@ -63,8 +63,10 @@ flint.hears('/echo', function(bot, trigger) {
 
 app.post('/', webhook(flint));
 
-var server = app.listen(config.port, function () {
-  flint.debug('Flint listening on port %s', config.port);
+var port = process.env.PORT || config.port;
+
+var server = app.listen(port, function () {
+  flint.debug('Flint listening on port %s', port);
 });
 
 // gracefully shutdown (ctrl-c)
