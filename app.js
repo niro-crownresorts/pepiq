@@ -20,23 +20,25 @@ var flint = new Flint(config);
 flint.start();
 console.log("Starting flint, please wait...");
 
-flint.on("initialized", function() {
-  console.log("Flint initialized successfully! [Press CTRL-C to quit]");
-});
-
 // say hello
-flint.hears('/hello', function(bot, trigger) {
+flint.hears('hello', function(bot, trigger) {
   bot.say('Hello %s!', trigger.personDisplayName);
 });
 
 // add flint event listeners
 flint.on('message', function(bot, trigger, id) {
   flint.debug('"%s" said "%s" in room "%s"', trigger.personEmail, trigger.text, trigger.roomTitle);
+  console.log('"%s" said "%s" in room "%s"', trigger.personEmail, trigger.text, trigger.roomTitle);
 });
 
 flint.on('initialized', function() {
   flint.debug('initialized %s rooms', flint.bots.length);
 });
+
+// default message for unrecognized commands
+flint.hears(/.*/, function(bot, trigger) {
+  bot.say('Sorry did not understand what you said!');
+}, 20);
 
 // define express path for incoming webhooks
 app.post('/flint', webhook(flint));
