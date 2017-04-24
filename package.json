@@ -1,5 +1,5 @@
 {
-  "name": "sparkbotstarter",
+  "name": "nirobot",
   "version": "1.0.0",
   "description": "Starter kit for creating a Cisco Spark bot",
   "main": "index.js",
@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valgaze/sparkbotstarter.git"
+    "url": "git+https://github.com/niro-pathi/nirobot.git"
   },
   "keywords": [
     "Cisco",
     "Spark"
   ],
-  "author": "Victor Algaze",
+  "author": "Niro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/valgaze/sparkbotstarter/issues"
+    "url": "https://github.com/niro-pathi/nirobot/issues"
   },
-  "homepage": "https://github.com/valgaze/sparkbotstarter#readme",
+  "homepage": "https://github.com/niro-pathi/nirobot#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
