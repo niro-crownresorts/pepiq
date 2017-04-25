@@ -25,25 +25,21 @@ flint.hears('hello', function(bot, trigger) {
   bot.say('Hello %s!', trigger.personDisplayName);
 });
 
-// add flint event listeners
-flint.on('message', function(bot, trigger, id) {
-  flint.debug('"%s" said "%s" in room "%s"', trigger.personEmail, trigger.text, trigger.roomTitle);  
-  
-});
-
-flint.on('initialized', function() {
-  flint.debug('initialized %s rooms', flint.bots.length);
-});
-
-// using a string to match first word and defines help text
-flint.hears('say', function(bot, trigger, id) {
-  bot.say(trigger.args.slice(1, trigger.arges.length - 1));
-}, 'say <greeting> - Responds with a greeting');
 
 // default message for unrecognized commands
 flint.hears(/.*/, function(bot, trigger) {
   bot.say('Sorry did not understand what you said!');
 }, 20);
+
+// add flint event listeners
+flint.on('message', function(bot, trigger, id) {
+  flint.debug('"%s" said "%s" in room "%s"', trigger.personEmail, trigger.text, trigger.roomTitle);  
+
+});
+
+flint.on('initialized', function() {
+  flint.debug('initialized %s rooms', flint.bots.length);
+});
 
 // define express path for incoming webhooks
 app.post('/flint', webhook(flint));
