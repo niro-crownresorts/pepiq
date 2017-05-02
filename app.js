@@ -14,7 +14,7 @@ console.log("Starting flint, please wait...");
 
 // say hello
 flint.hears('hello', function(bot, trigger) {
-  bot.say('Hello %s!', trigger.personDisplayName);
+  bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
 });
 
 
@@ -31,6 +31,7 @@ flint.on('message', function(bot, trigger, id) {
 
 flint.on('initialized', function() {
   flint.debug('initialized %s rooms', flint.bots.length);
+  console.log('initialized %s rooms', flint.bots.length);
 });
 
 // define express path for incoming webhooks
