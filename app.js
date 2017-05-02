@@ -37,22 +37,15 @@ flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
   
   //match method stops slash commands being passed to Watson
   if(request.match(/(^| )\/hello|\/roomid( |.|$)/i)){
-    flint.debug('IBM Watson call cancelled: slash command used')
+    flint.debug('IBM Watson call cancelled: slash command used');
   }else{
-    bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName); 
+    if(request.match('Hello')){
+       bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
+    }else{
+       bot.say('Sorry, not sure I understand that');
+    } 
   }
 });
-
-// say hello
-flint.hears('hello', function(bot, trigger) {
-  bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
-});
-
-
-// default message for unrecognized commands
-flint.hears(/.*/, function(bot, trigger) {
-  bot.say('Sorry, not sure I understand that');
-}, 20);
 
 // add flint event listeners
 flint.on('message', function(bot, trigger, id) {
