@@ -12,6 +12,19 @@ var flint = new Flint(config);
 flint.start();
 console.log("Starting flint, please wait...");
 
+//Welcome message when a new room or 1:1 is spawned with the bot
+flint.on('spawn', function(bot) {
+  flint.debug('new bot spawned in room: %s', bot.room.id);
+  
+  //presents different messages based on room or 1:1 
+  if(bot.isGroup){
+     bot.say("Hi! To get started just type @Pepiq Hello.");
+  }else{
+    bot.say("Hi! To get started just type Hello.");
+  }; 
+  bot.repeat;
+});
+
 // say hello
 flint.hears('hello', function(bot, trigger) {
   bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
@@ -20,7 +33,7 @@ flint.hears('hello', function(bot, trigger) {
 
 // default message for unrecognized commands
 flint.hears(/.*/, function(bot, trigger) {
-  bot.say('Sorry did not understand what you said!');
+  bot.say('Sorry, not sure I understand that');
 }, 20);
 
 // add flint event listeners
