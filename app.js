@@ -18,11 +18,31 @@ flint.on('spawn', function(bot) {
   
   //presents different messages based on room or 1:1 
   if(bot.isGroup){
-     bot.say("Hi! To get started just type @Pepiq Hello.");
+     bot.say('Hi %s! ' + ' ,to get started just type @Pepiq Hello.',trigger.personDisplayName);
   }else{
-    bot.say("Hi! To get started just type Hello.");
+    bot.say('Hi %s! ' + ' ,to get started just type Hello.',trigger.personDisplayName);
   }; 
   bot.repeat;
+});
+
+//set bot to listen to incoming webhooks
+flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
+
+  var text = trigger.text;
+  
+  console.log("sample text " + text);
+
+  //@ mention removed before further processing for group conversations
+  var request = text.replace("TCDisruptSF ",'');
+  
+  //match method stops slash commands being passed to Watson
+  if(request.match(/(^| )\/hello|\/roomid( |.|$)/i)){
+    flint.debug('IBM Watson call cancelled: slash command used')
+  }else{
+  ibmapi.watsonConversation(request, function(response){
+    bot.say(response);
+  })
+  }
 });
 
 // say hello
