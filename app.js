@@ -33,15 +33,13 @@ flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
   console.log("sample text " + text);
 
   //@ mention removed before further processing for group conversations
-  var request = text.replace("TCDisruptSF ",'');
+  var request = text.replace("PEPIQ ",'');
   
   //match method stops slash commands being passed to Watson
   if(request.match(/(^| )\/hello|\/roomid( |.|$)/i)){
     flint.debug('IBM Watson call cancelled: slash command used')
   }else{
-  ibmapi.watsonConversation(request, function(response){
-    bot.say(response);
-  })
+    bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName); 
   }
 });
 
