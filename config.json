@@ -1,5 +1,8 @@
 {
-  "webhookUrl": "https://niro-spark-bot.herokuapp.com/",
+  "webhookUrl": "https://niro-spark-bot.herokuapp.com/flint",
   "token": "NTFkYjAyMDgtNTdkZi00YjQ5LWE5OTItNzY2Mzk5MGUzYmIyNDJlNGRmNDItMDJk",
-  "port": 7001
+  "port": 8080,
+  "removeWebhooksOnStart": false,
+  "maxConcurrent": 5,
+  "minTime": 50
 }

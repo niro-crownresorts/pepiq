@@ -1,5 +1,5 @@
 {
-  "name": "nirobot",
+  "name": "pepiq",
   "version": "1.0.0",
   "description": "Starter kit for creating a Cisco Spark bot",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niro-pathi/nirobot.git"
+    "url": "git+https://github.com/niro-crownresorts/pepiq.git"
   },
   "keywords": [
     "Cisco",
@@ -17,9 +17,9 @@
   "author": "Niro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/niro-pathi/nirobot/issues"
+    "url": "https://github.com/niro-crownresorts/pepiq/issues"
   },
-  "homepage": "https://github.com/niro-pathi/nirobot#readme",
+  "homepage": "https://github.com/niro-crownresorts/pepiq#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",

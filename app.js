@@ -5,16 +5,6 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
 
-// flint options
-var config = {
-  webhookUrl: 'https://niro-spark-bot.herokuapp.com/flint',
-  token: 'NTFkYjAyMDgtNTdkZi00YjQ5LWE5OTItNzY2Mzk5MGUzYmIyNDJlNGRmNDItMDJk',
-  port: 8080,
-  removeWebhooksOnStart: false,
-  maxConcurrent: 5,
-  minTime: 50
-};
-
 // init flint
 var flint = new Flint(config);
 flint.start();
