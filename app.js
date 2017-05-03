@@ -39,7 +39,7 @@ flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
   if(request.match(/(^| )\/hello|\/roomid( |.|$)/i)){
     flint.debug('IBM Watson call cancelled: slash command used');
   }else{
-    if(request.match('Hello')){
+    if(request.match('Hello'|'Hi')){
        bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
     }else{
        bot.say('Sorry, not sure I understand that');
