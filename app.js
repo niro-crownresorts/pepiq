@@ -45,14 +45,16 @@ flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
     }else{
        bot.say('I am sorry, I do not understand!');
     } 
+
+    if(request.match(/(^| )\PAST|\/past( |.|$)/i)){
+    bot.say('Please enter the patron number to fix the PAST status.');
+    }else{
+       bot.say('I am sorry, I do not understand!');
+    } 
+
   }
 
-  if(request.match(/(^| )\/PAST|\/past( |.|$)/i)){
-    bot.say('Please enter the patron number to fix the PAST status.');
-  }else{
-       bot.say('I am sorry, I do not understand!');
-  } 
-
+  
 });
 
 // add flint event listeners
