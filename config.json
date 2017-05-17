@@ -4,5 +4,6 @@
   "port": 8080,
   "removeWebhooksOnStart": false,
   "maxConcurrent": 5,
-  "minTime": 50
+  "minTime": 50,
+  "LUIS_MODEL_URL" : "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4b6baa14-a7a7-457b-a13c-b0c08e6d0511?subscription-key=3ebeff744a9d4eb99e21e75caa277bbf&verbose=true&timezoneOffset=0"
 }

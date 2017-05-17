@@ -7,6 +7,7 @@ var app = express();
 app.use(bodyParser.json());
 const config = require("./config.json");
 
+
 // init flint
 var flint = new Flint(config);
 flint.start();
@@ -42,9 +43,16 @@ flint.hears(/(^| )pepiq|.*( |.|$)/i, function(bot, trigger) {
     if(request.match(/(^| )\hello|\hi( |.|$)/i)){
        bot.say('Hello %s! ' + 'Thank you for getting in touch with Pepiq. What can I help you with?', trigger.personDisplayName);
     }else{
-       bot.say('Sorry, not sure I understand that');
+       bot.say('I am sorry, I do not understand!');
     } 
   }
+
+  if(request.match(/(^| )\/PAST|\/past( |.|$)/i)){
+    bot.say('Please enter the patron number to fix the PAST status.');
+  }else{
+       bot.say('I am sorry, I do not understand!');
+  } 
+
 });
 
 // add flint event listeners
